@@ -4,7 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ODIN PROJECT | Noel Thomas</title>
+
+<title>Noel Thomas | ODIN PROJECT</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,13 +13,14 @@
 
 <style>
 :root {
-    --bg: #080b14;
-    --card: #111827;
+    --background: #080b16;
+    --surface: #111827;
+    --surface-light: #172033;
     --text: #f8fafc;
     --muted: #9ca3af;
     --purple: #8b5cf6;
     --blue: #3b82f6;
-    --border: rgba(255,255,255,.09);
+    --border: rgba(255,255,255,0.09);
 }
 
 * {
@@ -30,7 +32,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    background: var(--background);
     color: var(--text);
     line-height: 1.7;
 }
@@ -51,13 +53,13 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(8,11,20,.9);
+    background: rgba(8,11,22,0.9);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
 }
 
 nav {
-    min-height: 75px;
+    height: 76px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,14 +77,15 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    align-items: center;
+    gap: 30px;
     list-style: none;
 }
 
 .nav-links a {
     color: var(--muted);
     font-size: 14px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .nav-links a:hover {
@@ -91,16 +94,16 @@ nav {
 
 .menu-btn {
     display: none;
-    background: none;
     color: white;
+    background: transparent;
     border: 1px solid var(--border);
-    padding: 8px 12px;
+    padding: 8px 13px;
     border-radius: 8px;
     font-size: 20px;
     cursor: pointer;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero {
     min-height: 85vh;
@@ -117,32 +120,45 @@ nav {
     height: 450px;
     background: var(--purple);
     filter: blur(160px);
-    opacity: .2;
+    opacity: 0.2;
     right: 5%;
     top: 5%;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--blue);
+    filter: blur(150px);
+    opacity: 0.12;
+    left: -10%;
+    bottom: 0;
+}
+
 .hero-content {
     position: relative;
+    z-index: 2;
     max-width: 800px;
 }
 
 .badge {
     display: inline-block;
     color: #c4b5fd;
-    background: rgba(139,92,246,.12);
-    border: 1px solid rgba(139,92,246,.3);
-    padding: 7px 15px;
+    background: rgba(139,92,246,0.12);
+    border: 1px solid rgba(139,92,246,0.3);
+    padding: 7px 16px;
     border-radius: 30px;
     font-size: 13px;
     margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(42px, 8vw, 78px);
-    line-height: 1.12;
-    margin-bottom: 22px;
+    font-size: clamp(45px, 8vw, 82px);
+    line-height: 1.1;
     letter-spacing: -3px;
+    margin-bottom: 25px;
 }
 
 .gradient-text {
@@ -156,7 +172,7 @@ nav {
     max-width: 650px;
     color: var(--muted);
     font-size: 17px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
 }
 
 .buttons {
@@ -167,11 +183,11 @@ nav {
 
 .btn {
     display: inline-block;
-    padding: 12px 23px;
+    padding: 13px 24px;
     border-radius: 10px;
     font-weight: 600;
     font-size: 14px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .btn-primary {
@@ -180,17 +196,17 @@ nav {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(139,92,246,.25);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(139,92,246,0.3);
 }
 
 .btn-secondary {
     border: 1px solid var(--border);
-    background: rgba(255,255,255,.03);
+    background: rgba(255,255,255,0.03);
 }
 
 .btn-secondary:hover {
-    background: rgba(255,255,255,.1);
+    background: rgba(255,255,255,0.1);
 }
 
 /* GENERAL SECTIONS */
@@ -213,8 +229,9 @@ section {
 }
 
 .section-heading h2 {
-    font-size: clamp(30px,5vw,45px);
+    font-size: clamp(32px,5vw,46px);
     margin-top: 8px;
+    letter-spacing: -1px;
 }
 
 .section-heading p {
@@ -222,7 +239,7 @@ section {
     margin-top: 10px;
 }
 
-/* ABOUT */
+/* ABOUT SECTION */
 
 .about-grid {
     display: grid;
@@ -235,7 +252,7 @@ section {
 .skill-card,
 .project-card,
 .contact-card {
-    background: var(--card);
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 30px;
@@ -268,7 +285,7 @@ section {
     text-align: right;
 }
 
-/* SKILLS */
+/* SKILLS SECTION */
 
 .skills-grid {
     display: grid;
@@ -279,17 +296,17 @@ section {
 .skill-card {
     text-align: center;
     padding: 30px 15px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.skill-card:hover,
-.project-card:hover {
-    transform: translateY(-5px);
+.skill-card:hover {
+    transform: translateY(-6px);
+    background: var(--surface-light);
     border-color: var(--purple);
 }
 
 .skill-icon {
-    font-size: 35px;
+    font-size: 36px;
     margin-bottom: 12px;
 }
 
@@ -303,7 +320,7 @@ section {
     margin-top: 8px;
 }
 
-/* PROJECTS */
+/* PROJECTS SECTION */
 
 .projects-grid {
     display: grid;
@@ -312,17 +329,23 @@ section {
 }
 
 .project-card {
-    transition: .3s;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--purple);
 }
 
 .project-number {
     color: var(--purple);
     font-size: 13px;
+    font-weight: 700;
     margin-bottom: 15px;
 }
 
 .project-card h3 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .project-card p {
@@ -330,11 +353,20 @@ section {
     font-size: 14px;
 }
 
-/* CONTACT */
+/* CONTACT SECTION */
 
 .contact-card {
     text-align: center;
-    padding: 50px 20px;
+    padding: 55px 25px;
+    background: linear-gradient(
+        145deg,
+        rgba(139,92,246,0.12),
+        var(--surface)
+    );
+}
+
+.contact-card h3 {
+    font-size: 27px;
 }
 
 .contact-card p {
@@ -346,13 +378,17 @@ section {
 
 footer {
     border-top: 1px solid var(--border);
-    padding: 25px 0;
+    padding: 28px 0;
     text-align: center;
     color: var(--muted);
     font-size: 13px;
 }
 
-/* MOBILE */
+footer p + p {
+    margin-top: 5px;
+}
+
+/* MOBILE RESPONSIVE */
 
 @media(max-width:800px) {
 
@@ -363,11 +399,12 @@ footer {
     .nav-links {
         display: none;
         position: absolute;
-        top: 75px;
+        top: 76px;
         left: 0;
         right: 0;
         background: #111827;
         flex-direction: column;
+        align-items: flex-start;
         padding: 25px 5%;
         border-bottom: 1px solid var(--border);
         gap: 18px;
@@ -387,7 +424,7 @@ footer {
     }
 
     section {
-        padding: 70px 0;
+        padding: 75px 0;
     }
 
     .hero {
@@ -396,6 +433,7 @@ footer {
 }
 
 @media(max-width:450px) {
+
     .hero h1 {
         letter-spacing: -1.5px;
     }
@@ -408,13 +446,17 @@ footer {
     .info-item strong {
         text-align: left;
     }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- HEADER -->
 
 <header>
 <nav class="container">
@@ -424,7 +466,7 @@ footer {
     </a>
 
     <button class="menu-btn" id="menuBtn"
-        aria-label="Open navigation menu">
+        aria-label="Toggle navigation">
         ☰
     </button>
 
@@ -456,18 +498,20 @@ footer {
 
     <p>
         Welcome to ODIN PROJECT, my personal digital portfolio.
-        Explore my academic journey, technical interests,
-        projects, and learning experiences.
+        I am passionate about technology, computer systems,
+        programming, and exploring the digital world.
     </p>
 
     <div class="buttons">
+
         <a href="#about" class="btn btn-primary">
-            About Me →
+            Discover More →
         </a>
 
         <a href="#projects" class="btn btn-secondary">
-            Explore Projects
+            View My Projects
         </a>
+
     </div>
 
 </div>
@@ -610,30 +654,42 @@ footer {
     <div class="projects-grid">
 
         <div class="project-card">
+
             <div class="project-number">PROJECT 01</div>
+
             <h3>Smart Home Automation</h3>
+
             <p>
                 Exploring smart home systems, automation,
                 connected devices, and modern technology.
             </p>
+
         </div>
 
         <div class="project-card">
+
             <div class="project-number">PROJECT 02</div>
+
             <h3>Android Application</h3>
+
             <p>
                 An Android application developed using
                 Kotlin and Jetpack Compose.
             </p>
+
         </div>
 
         <div class="project-card">
+
             <div class="project-number">PROJECT 03</div>
+
             <h3>Database Design</h3>
+
             <p>
                 Working with relational database models,
                 SQL queries, and data management.
             </p>
+
         </div>
 
     </div>
@@ -666,6 +722,7 @@ footer {
         </a>
 
     </div>
+
 </div>
 </section>
 
