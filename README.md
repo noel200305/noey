@@ -71,7 +71,8 @@ nav {
 }
 
 .logo span {
-    color: var(--purple);
+    color: #8b5cf6;
+}
 }
 
 .nav-links {
