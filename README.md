@@ -1,10 +1,12 @@
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Noel Thomas | ODIN PROJECT</title>
+<title>ODIN PROJECT | Noel Thomas</title>
+<meta name="description" content="Noel Thomas - Computer Systems Student at RNU. Personal digital portfolio.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +14,9 @@
 
 <style>
 :root {
-    --background: #080b16;
-    --surface: #111827;
-    --surface-light: #172033;
+    --bg: #080b16;
+    --card: #111827;
+    --card-hover: #172033;
     --text: #f8fafc;
     --muted: #9ca3af;
     --purple: #8b5cf6;
@@ -31,7 +33,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: var(--background);
+    background: var(--bg);
     color: var(--text);
     line-height: 1.7;
 }
@@ -52,27 +54,30 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(8,11,22,0.9);
+    background: rgba(8,11,22,0.94);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--border);
 }
 
 nav {
-    height: 76px;
+    min-height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 20px;
 }
+
+/* COMPLETE LOGO */
 
 .logo {
     font-size: 23px;
     font-weight: 800;
     letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 .logo span {
-    color: #8b5cf6;
-}
+    color: var(--purple);
 }
 
 .nav-links {
@@ -94,8 +99,8 @@ nav {
 
 .menu-btn {
     display: none;
-    color: white;
     background: transparent;
+    color: white;
     border: 1px solid var(--border);
     padding: 8px 13px;
     border-radius: 8px;
@@ -103,7 +108,7 @@ nav {
     cursor: pointer;
 }
 
-/* HERO SECTION */
+/* HOME */
 
 .hero {
     min-height: 85vh;
@@ -120,9 +125,10 @@ nav {
     height: 450px;
     background: var(--purple);
     filter: blur(160px);
-    opacity: 0.2;
+    opacity: 0.18;
     right: 5%;
     top: 5%;
+    pointer-events: none;
 }
 
 .hero::after {
@@ -135,12 +141,14 @@ nav {
     opacity: 0.12;
     left: -10%;
     bottom: 0;
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 850px;
+    padding: 60px 0;
 }
 
 .badge {
@@ -148,15 +156,15 @@ nav {
     color: #c4b5fd;
     background: rgba(139,92,246,0.12);
     border: 1px solid rgba(139,92,246,0.3);
-    padding: 7px 16px;
+    padding: 7px 17px;
     border-radius: 30px;
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .hero h1 {
     font-size: clamp(45px, 8vw, 82px);
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -3px;
     margin-bottom: 25px;
 }
@@ -168,9 +176,16 @@ nav {
     color: transparent;
 }
 
+.hero-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.7);
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 .hero p {
-    max-width: 650px;
-    color: var(--muted);
+    max-width: 750px;
+    color: #94a3b8;
     font-size: 17px;
     margin-bottom: 32px;
 }
@@ -183,8 +198,8 @@ nav {
 
 .btn {
     display: inline-block;
-    padding: 13px 24px;
-    border-radius: 10px;
+    padding: 13px 25px;
+    border-radius: 11px;
     font-weight: 600;
     font-size: 14px;
     transition: 0.3s;
@@ -202,7 +217,7 @@ nav {
 
 .btn-secondary {
     border: 1px solid var(--border);
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,255,255,0.04);
 }
 
 .btn-secondary:hover {
@@ -212,12 +227,12 @@ nav {
 /* GENERAL SECTIONS */
 
 section {
-    padding: 100px 0;
-    scroll-margin-top: 75px;
+    padding: 95px 0;
+    scroll-margin-top: 80px;
 }
 
 .section-heading {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .small-title {
@@ -229,7 +244,7 @@ section {
 }
 
 .section-heading h2 {
-    font-size: clamp(32px,5vw,46px);
+    font-size: clamp(32px,5vw,45px);
     margin-top: 8px;
     letter-spacing: -1px;
 }
@@ -239,12 +254,12 @@ section {
     margin-top: 10px;
 }
 
-/* ABOUT SECTION */
+/* ABOUT */
 
 .about-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 30px;
+    gap: 25px;
 }
 
 .about-text,
@@ -252,15 +267,19 @@ section {
 .skill-card,
 .project-card,
 .contact-card {
-    background: var(--surface);
+    background: var(--card);
     border: 1px solid var(--border);
     border-radius: 18px;
     padding: 30px;
 }
 
+.about-text h3 {
+    font-size: 22px;
+}
+
 .about-text p {
     color: var(--muted);
-    margin-bottom: 18px;
+    margin-top: 15px;
 }
 
 .info-list {
@@ -283,9 +302,10 @@ section {
 
 .info-item strong {
     text-align: right;
+    font-size: 14px;
 }
 
-/* SKILLS SECTION */
+/* SKILLS */
 
 .skills-grid {
     display: grid;
@@ -301,7 +321,7 @@ section {
 
 .skill-card:hover {
     transform: translateY(-6px);
-    background: var(--surface-light);
+    background: var(--card-hover);
     border-color: var(--purple);
 }
 
@@ -320,7 +340,7 @@ section {
     margin-top: 8px;
 }
 
-/* PROJECTS SECTION */
+/* PROJECTS */
 
 .projects-grid {
     display: grid;
@@ -335,6 +355,7 @@ section {
 .project-card:hover {
     transform: translateY(-6px);
     border-color: var(--purple);
+    background: var(--card-hover);
 }
 
 .project-number {
@@ -346,6 +367,7 @@ section {
 
 .project-card h3 {
     margin-bottom: 12px;
+    font-size: 19px;
 }
 
 .project-card p {
@@ -353,15 +375,15 @@ section {
     font-size: 14px;
 }
 
-/* CONTACT SECTION */
+/* CONTACT */
 
 .contact-card {
     text-align: center;
-    padding: 55px 25px;
+    padding: 50px 25px;
     background: linear-gradient(
         145deg,
         rgba(139,92,246,0.12),
-        var(--surface)
+        var(--card)
     );
 }
 
@@ -388,7 +410,7 @@ footer p + p {
     margin-top: 5px;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE NAVIGATION */
 
 @media(max-width:800px) {
 
@@ -399,7 +421,7 @@ footer p + p {
     .nav-links {
         display: none;
         position: absolute;
-        top: 76px;
+        top: 80px;
         left: 0;
         right: 0;
         background: #111827;
@@ -424,7 +446,7 @@ footer p + p {
     }
 
     section {
-        padding: 75px 0;
+        padding: 70px 0;
     }
 
     .hero {
@@ -438,6 +460,10 @@ footer p + p {
         letter-spacing: -1.5px;
     }
 
+    .hero p {
+        font-size: 15px;
+    }
+
     .info-item {
         flex-direction: column;
         gap: 3px;
@@ -446,27 +472,24 @@ footer p + p {
     .info-item strong {
         text-align: left;
     }
-
-    .skills-grid {
-        grid-template-columns: 1fr 1fr;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- HEADER: NO EXTRA TITLE ABOVE THIS -->
 
 <header>
 <nav class="container">
 
-   <a href="#home" class="logo">
-    ODIN <span>PROJECT</span>
-</a>
+    <a href="#home" class="logo">
+        ODIN <span>PROJECT</span>
+    </a>
 
-    <button class="menu-btn" id="menuBtn"
-        aria-label="Toggle navigation">
+    <button class="menu-btn"
+        id="menuBtn"
+        aria-label="Open navigation">
         ☰
     </button>
 
@@ -495,6 +518,8 @@ footer p + p {
         Hello, I'm<br>
         <span class="gradient-text">Noel Thomas</span>
     </h1>
+
+    <div class="hero-divider"></div>
 
     <p>
         Welcome to ODIN PROJECT, my personal digital portfolio.
@@ -534,7 +559,6 @@ footer p + p {
         <div class="about-text">
 
             <h3>Hello! I'm Noel Thomas,</h3>
-            <br>
 
             <p>
                 I am currently studying Computer Systems
