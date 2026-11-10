@@ -460,9 +460,9 @@ footer p + p {
 <header>
 <nav class="container">
 
-    <a href="#home" class="logo">
-        ODIN<span>.</span>
-    </a>
+   <a href="#home" class="logo">
+    ODIN <span>PROJECT</span>
+</a>
 
     <button class="menu-btn" id="menuBtn"
         aria-label="Toggle navigation">
